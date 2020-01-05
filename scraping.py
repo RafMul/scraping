@@ -19,24 +19,24 @@ adressDIV = soup.find_all("div", attrs= {'class': 'promobox-title-left' })
 adress = []																	# Tablica class promobox-title-left z adresami
 																			# Tablica nezbędna do poprania adresów wwww
 for a in  adressDIV:
-	adress.append(a)														# Dodawanie clas promobox-title-left do tablicy
+	adress.append(a)										# Dodawanie clas promobox-title-left do tablicy
 
 
 add_title_page = []
-link_title = []																# Tablica z href  sam link
+link_title = []												# Tablica z href  sam link
 for n in adress:
 	a_tag = n.find('a', href=True)
 	href = a_tag['href']
 	add_title_page.append("http://www.rzeszowiak.pl")
-	link_title.append(href)													# Dodawanie do tablicy href link
+	link_title.append(href)										# Dodawanie do tablicy href link
 
-page_link = []																# lista linków do stron z ofertą
+page_link = []												# lista linków do stron z ofertą
 for li, ja in zip (add_title_page,link_title) :
 	ge = li + ja
-	page_link.append(ge)													# dodawanie dwoch tablic i generowanie linku
+	page_link.append(ge)										# dodawanie dwoch tablic i generowanie linku
 
-title_list = []																# Tablica z tytułami class promobox-title-left text
-cena_list = []																# Tablica z canami class promobox-title-left2
+title_list = []												# Tablica z tytułami class promobox-title-left text
+cena_list = []												# Tablica z canami class promobox-title-left2
 
 for titles in title:
 	title_list.append(titles.getText().split('/n')[0])						# Dodawanie do tablicy tytułów
